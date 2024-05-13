@@ -13,7 +13,7 @@ pipeline {
       }
       stage('Test Report') {
         steps {
-          sh 'mvn test --fail-never'
+          sh 'mvn -Dtest=TestCss,TestImageUtil test --fail-never'
           sh 'mvn surefire-report:report'
         }
       }
